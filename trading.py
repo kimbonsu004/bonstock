@@ -3,37 +3,34 @@ from company import *
 mymoney=100000
 abc_mystock=0
 
-while True:
+abc.price()
 
-    abc=int(abc.price())
+# command=input("원하시는 거래를 입력해주세요 >>> ")
 
-    print("현재 가격 : {}".format(abc))
+# if command=="매수":
 
-    command=input("원하시는 거래를 입력해주세요 >>> ")
+#     buy=int(input("매수량을 입력해주세요 >>> "))
 
-    if command=="매수":
+#     if abc*buy > mymoney:
+#         print("잔고가 부족합니다")
 
-        buy=int(input("매수량을 입력해주세요 >>> "))
+#     elif abc*buy < mymoney:
+#         print("{} 주 매수되었습니다".format(buy))
+#         abc_mystock+=buy
+#         mymoney-=abc*buy
 
-        if abc*buy > mymoney:
-            print("잔고가 부족합니다")
+# elif command=="매도":
 
-        elif abc*buy < mymoney:
-            print("{} 주 매수되었습니다".format(buy))
-            abc_mystock+=buy
-            mymoney-=abc*buy
+#     sell = int(input("매도량을 입력해주세요 >>>"))
 
-    elif command=="매도":
+#     if sell>abc_mystock:
+#         print("보유 주식이 부족합니다")
 
-        sell = int(input("매도량을 입력해주세요 >>>"))
+#     elif sell<abc_mystock:
+#         print("{} 주 매도되었습니다".format(sell))
+#         abc_mystock-=sell
+#         mymoney+=abc*sell
 
-        if sell>abc_mystock:
-            print("보유 주식이 부족합니다")
+# elif command=="대기":
+#     pass
 
-        elif sell<abc_mystock:
-            print("{} 주 매도되었습니다".format(sell))
-            abc_mystock-=sell
-            mymoney+=abc*sell
-
-    elif command=="대기":
-        pass
