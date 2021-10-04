@@ -1,17 +1,36 @@
-client = {"name":"","money":0,}
+clientData = {
 
-if client['name'] is not str:
-    client["name"] = input("고객님의 성함을 입력해주세요 >> ")
-    print("{} 님 반갑습니다.".format(client["name"]))
+    "name":"",
 
-else:
-    pass
+    "money":0,
+    
+    "stock":{
+        "Apple":
+            {
+                ""
+                "capacity":0,
+            },
+        "Samsung":
+            {
+                "capacity":0,
+            },
+        "Hansei":
+            {
+                "capacity":0,
+            }
+        }    
+}
 
-if client['money'] == 0:
-    client["money"] = int(input("투자하실 금액을 입력해주세요 >>  "))
-    print("{} 원 입금되었습니다.".format(client["money"]))
+def client():
 
-else:
-    pass
+    if clientData['name'] is not str:
+        clientData["name"] = input("고객님의 성함을 입력해주세요 >>> ")
 
+    else:
+        pass
+ 
+    my_name = clientData["name"]
+    my_money = clientData["money"]
+    my_stock = clientData["stock"]
 
+    return my_name,my_money,my_stock
