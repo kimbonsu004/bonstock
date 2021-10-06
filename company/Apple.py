@@ -25,6 +25,3 @@ def current_price(Apple_beginning):
             Apple_curent=Apple_beginning-change
 
         return Apple_curent
-
-
-

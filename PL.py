@@ -1,17 +1,24 @@
 from company import *
+from client import *
 
-def PL():
+def PL(beginprice,capacity):
 
-    apple_begining = Apple.price()
+    clientData['stock']['Apple']['price']  = beginprice # apple_begining #client 딕셔너리와 연동
+
+    apple_beginning = clientData['stock']['Apple']['price'] # 딕셔너리 값 할당
+
+    Myapple_beginning = apple_beginning * capacity  # 변수에 가격* 보유량 할당 , 총금액
+
+    clientData['stock']['Apple']['capacity']  = capacity #  해당 딕셔너리에 값 대입, 변수에 할당
 
     while True:
 
-        apple_curret = Apple.current_price(apple_begining)    
+        Myapple_current = Apple.current_price(apple_beginning) * capacity
 
-        if apple_begining>apple_curret: # 손해일 경우
-            lost=round(((apple_curret/apple_begining*100) - 100),3)
-            print("\rApple 매수액 : {0:,}   현재가 : {1:,}  수익률 : {2}% ".format(apple_begining,apple_curret,lost),end="")
+        if Myapple_beginning>Myapple_current: # 손해일 경우
+            lost=round(((Myapple_current/Myapple_beginning*100) - 100),3)
+            print("\rApple 매수액 : {0:,}   현재가 : {1:,}  수익률 : {2}% ".format(Myapple_beginning, Myapple_current, lost),end="")
 
-        elif apple_begining<apple_curret: # 이익일 경우
-            profit=round(((apple_curret/apple_begining*100) - 100),3)
-            print("\rApple 매수액 : {0:,}   현재가 : {1:,}  수익률 : + {2}% ".format(apple_begining,apple_curret,profit),end="")
+        elif Myapple_beginning<Myapple_current: # 이익일 경우
+            profit=round(((Myapple_current/Myapple_beginning*100) - 100),3)
+            print("\rApple 매수액 : {0:,}   현재가 : {1:,}  수익률 : + {2}% ".format(Myapple_beginning, Myapple_current, profit),end="")
