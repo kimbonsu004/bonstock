@@ -5,19 +5,19 @@ clientData = {
     "money":0,
     
     "stock":{
-        "Apple":
+        "apple":
             {
                 "buyprice":0,
                 "currentprice":0,
                 "capacity":0,
             },
-        "Samsung":
+        "samsung":
             {
                 "buyprice":0,
                 "currentprice":0,
                 "capacity":0,
             },
-        "Hansei":
+        "hansei":
             {
                 "buyprice":0,
                 "currentprice":0,
@@ -44,4 +44,4 @@ def client():
     my_money = clientData["money"]
     my_stock = clientData["stock"]
 
-    return my_name,my_money,my_stock
+    return my_name,my_money,my_stock    

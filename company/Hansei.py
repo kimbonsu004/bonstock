@@ -23,6 +23,6 @@ def current_price(Hansei_beginning):
         else:
             Hansei_curent=Hansei_beginning-change
 
-        clientData['stock']['Hansei']['currentprice']=Hansei_curent 
+        clientData['stock']['hansei']['currentprice']=Hansei_curent 
 
-        sleep(20)
+        sleep(5)

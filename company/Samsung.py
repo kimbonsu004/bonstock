@@ -23,6 +23,6 @@ def current_price(Samsung_beginning):
         else:
             Samsung_curent=Samsung_beginning-change
 
-        clientData['stock']['Samsung']['currentprice']=Samsung_curent 
+        clientData['stock']['samsung']['currentprice']=Samsung_curent 
 
-        sleep(20)
+        sleep(5)

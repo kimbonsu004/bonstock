@@ -36,6 +36,6 @@ def trade():
 
     print()
 
-    command_stock = input("거래하실 종목을 입력해주세요 >> ")
+    command_stock = input("거래하실 종목을 입력해주세요 >> ").lower()
 
     Comtrade(command_stock)

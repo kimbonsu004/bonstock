@@ -20,8 +20,19 @@ def PL(Company):
 
         if MyCompany_buying>MyCompany_current: # 손해일 경우
             lost=round(((MyCompany_current/MyCompany_buying*100) - 100),3)
-            print("\r{0} 매수액 : {1:,}   현재가 : {2:,}  수익률 : {3}% ".format(Company,MyCompany_buying, MyCompany_current, lost),end="")
+
+            print("\r"+f"{Company} 매수액 : {MyCompany_buying:,}   현재가 : {MyCompany_current:,}" + " 수익률 : " + Colors.BLUE +f" {lost} %" + Colors.RESET,end="")  
+
+            #print("\r{0} 매수액 : {1:,}   현재가 : {2:,}  수익률 : {3}% ".format(Company,MyCompany_buying, MyCompany_current, lost),end="")  # 원래 코드
+
+            #print("\r{0} 매수액 : {1:,}   현재가 : {2:,}  ".format(Company,MyCompany_buying, MyCompany_current) + "수익률 : " + Colors.RED + "{3}%".format(lost)+Colors.RESET) # 연구중인 코드
 
         elif MyCompany_buying<MyCompany_current: # 이익일 경우
+           
             profit=round(((MyCompany_current/MyCompany_buying*100) - 100),3)
-            print("\r{0} 매수액 : {1:,}   현재가 : {2:,}  수익률 : + {3}% ".format(Company,MyCompany_buying, MyCompany_current, profit),end="")
+
+            print("\r"+f"{Company} 매수액 : {MyCompany_buying:,}   현재가 : {MyCompany_current:,}" + " 수익률 : " + Colors.RED +f" + {profit} %" + Colors.RESET,end="") 
+           
+           
+           # print("\r{0} 매수액 : {1:,}   현재가 : {2:,}  수익률 : + {3}% ".format(Company,MyCompany_buying, MyCompany_current, profit),end="")
+           # print("\r{0} 매수액 : {1:,}   현재가 : {2:,}  ".format(Company,MyCompany_buying, MyCompany_current) + "수익률 : " + Colors.RED + "{3}%".format(profit)+Colors.RESET) # 연구중인 코드

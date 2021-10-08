@@ -23,6 +23,6 @@ def current_price(Apple_beginning):
         else:
             Apple_curent=Apple_beginning-change
 
-        clientData['stock']['Apple']['currentprice']=Apple_curent 
+        clientData['stock']['apple']['currentprice']=Apple_curent 
 
-        sleep(20)
+        sleep(5)
