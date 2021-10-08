@@ -7,17 +7,20 @@ clientData = {
     "stock":{
         "Apple":
             {
-                "price":0,
+                "buyprice":0,
+                "currentprice":0,
                 "capacity":0,
             },
         "Samsung":
             {
-                "price":0,
+                "buyprice":0,
+                "currentprice":0,
                 "capacity":0,
             },
         "Hansei":
             {
-                "price":0,
+                "buyprice":0,
+                "currentprice":0,
                 "capacity":0,
             }
         }    

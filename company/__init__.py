@@ -1,1 +1,1 @@
-__all__ = ['Apple']
+__all__ = ['Apple','Samsung','Hansei']

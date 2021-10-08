@@ -1,24 +1,27 @@
 from company import *
 from client import *
 
-def PL(beginprice,capacity):
+class Colors: 
+    RED = '\033[31m' 
+    BLUE = '\033[34m' 
+    RESET = '\033[0m'
 
-    clientData['stock']['Apple']['price']  = beginprice # apple_begining #client 딕셔너리와 연동
-
-    apple_beginning = clientData['stock']['Apple']['price'] # 딕셔너리 값 할당
-
-    Myapple_beginning = apple_beginning * capacity  # 변수에 가격* 보유량 할당 , 총금액
-
-    clientData['stock']['Apple']['capacity']  = capacity #  해당 딕셔너리에 값 대입, 변수에 할당
-
+def PL(Company):
+    
     while True:
 
-        Myapple_current = Apple.current_price(apple_beginning) * capacity
+        buyprice = clientData['stock'][Company]['buyprice'] # 구매 금액 딕셔너리 참조
 
-        if Myapple_beginning>Myapple_current: # 손해일 경우
-            lost=round(((Myapple_current/Myapple_beginning*100) - 100),3)
-            print("\rApple 매수액 : {0:,}   현재가 : {1:,}  수익률 : {2}% ".format(Myapple_beginning, Myapple_current, lost),end="")
+        capacity = clientData['stock'][Company]['capacity']   # 구매 수량 딕셔너리 참조
 
-        elif Myapple_beginning<Myapple_current: # 이익일 경우
-            profit=round(((Myapple_current/Myapple_beginning*100) - 100),3)
-            print("\rApple 매수액 : {0:,}   현재가 : {1:,}  수익률 : + {2}% ".format(Myapple_beginning, Myapple_current, profit),end="")
+        MyCompany_buying = buyprice * capacity  # 변수에 구매 가격 * 보유량 할당 , 총 매수 금액
+
+        MyCompany_current = clientData['stock'][Company]['currentprice'] * capacity #변화중인 현재가를 가져옴
+
+        if MyCompany_buying>MyCompany_current: # 손해일 경우
+            lost=round(((MyCompany_current/MyCompany_buying*100) - 100),3)
+            print("\r{0} 매수액 : {1:,}   현재가 : {2:,}  수익률 : {3}% ".format(Company,MyCompany_buying, MyCompany_current, lost),end="")
+
+        elif MyCompany_buying<MyCompany_current: # 이익일 경우
+            profit=round(((MyCompany_current/MyCompany_buying*100) - 100),3)
+            print("\r{0} 매수액 : {1:,}   현재가 : {2:,}  수익률 : + {3}% ".format(Company,MyCompany_buying, MyCompany_current, profit),end="")
