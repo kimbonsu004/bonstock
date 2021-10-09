@@ -5,13 +5,13 @@ clientData = {
     "money":0,
     
     "stock":{
-        "apple":
+        "samsung":
             {
                 "buyprice":0,
                 "currentprice":0,
                 "capacity":0,
             },
-        "samsung":
+        "apple":
             {
                 "buyprice":0,
                 "currentprice":0,
@@ -28,7 +28,7 @@ clientData = {
 
 def client():
 
-    if clientData['name'] is not str:
+    if clientData['name'] == "":
         clientData["name"] = input("고객님의 성함을 입력해주세요 >>> ")
 
     else:

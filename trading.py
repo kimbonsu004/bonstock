@@ -16,7 +16,7 @@ def Comtrade(Company):
 
         buyable = round(Mymoney/buyprice) # 구매 가능 수량
 
-        print("구매 가능 수량은 {0:,} 주 입니다".format(buyable))
+        print("매수 가능 수량은 {0:,} 주 입니다".format(buyable))
 
         capacity=int(input("매수 수량을 입력해주세요 >> "))
 
@@ -26,7 +26,7 @@ def Comtrade(Company):
         elif capacity<=buyable: # 매수량 50 ? 가능량 100 , 성공 함수호출
             Mymoney=-buyprice*capacity
             clientData['stock'][Company]['capacity']=+capacity
-            PL(Company)
+            print(f'{capacity} 주 매수되었습니다.')
 
 
 def trade():
