@@ -26,7 +26,7 @@ def Comtrade(Company):
         elif capacity<=buyable: # 매수량 50 ? 가능량 100 , 성공 함수호출
             Mymoney=-buyprice*capacity
             clientData['stock'][Company]['capacity']=+capacity
-            print(f'{capacity} 주 매수되었습니다.')
+            print(f'{capacity} 주 매수되었습니다.  보유 금액 : {Mymoney:,} 원')
 
 
 def trade():

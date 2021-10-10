@@ -1,5 +1,6 @@
 from client import *
 from PL import *
+import company
 from trading import *
 from threading import Thread
 from company import *
@@ -11,7 +12,7 @@ os.system("cls")
 def service():
     print("{0}님 어서오세요,".format(my_name),end="")
     print(" 원하시는 업무를 선택하여 주세요")
-    3
+    
     while True:
 
         service_num=int(input(
@@ -53,25 +54,32 @@ ______ __   __  _____  _                 _
                                               
 """)
 
-th1=Thread(target=Apple.price)
-th2=Thread(target=Samsung.price)
-th3=Thread(target=Hansei.price)
+th=Thread(target=company.price,daemon=True)
+# th2=Thread(target=Samsung.price)
+# th3=Thread(target=Hansei.price)
 
 
-th1.start()
-
-th2.start()
-
-th3.start()
+th.start()
 
 service()
 
-th1.join()
+# th2.start()
 
-th2.join()
 
-th3.join()
+# th3.start()
 
+
+
+# th1.join()
+
+# th2.join()
+
+# th3.join()
+
+# th=Thread(target=company.__all__)
+# th.start()
+# service()
+# th.join()
 
 
 

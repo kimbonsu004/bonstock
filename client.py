@@ -1,17 +1,23 @@
 clientData = {
 
-    "name":"",
+    "name":"김본수",
 
-    "money":0,
+    "money":10000000,
     
     "stock":{
         "samsung":
             {
-                "buyprice":0,
+                "buyprice":3000,
                 "currentprice":0,
-                "capacity":0,
+                "capacity":5,
             },
         "apple":
+            {
+                "buyprice":4000,
+                "currentprice":0,
+                "capacity":5,
+            },
+        "tessla":
             {
                 "buyprice":0,
                 "currentprice":0,
@@ -19,9 +25,9 @@ clientData = {
             },
         "hansei":
             {
-                "buyprice":0,
+                "buyprice":2000,
                 "currentprice":0,
-                "capacity":0,
+                "capacity":5,
             }
         }    
 }

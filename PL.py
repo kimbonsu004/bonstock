@@ -26,12 +26,12 @@ def PL(Company):
 
         lost=round(((MyCompany_current/MyCompany_buying*100) - 100),3)
 
-        print("\r\n"+f"{Company} 매수액 : {MyCompany_buying:,}   현재가 : {MyCompany_current:,}" + " 수익률 : " + Colors.BLUE +f" {lost} %" + Colors.RESET,end=" ")  
+        print("\r\n"+f"{Company}  매수액 : {MyCompany_buying:,}   현재가 : {MyCompany_current:,}" + "  수익률 : " + Colors.BLUE +f" {lost} %" + Colors.RESET,end="  ")  
 
     elif MyCompany_buying<MyCompany_current: # 이익일 경우
         
         profit=round(((MyCompany_current/MyCompany_buying*100) - 100),3)
 
-        print("\r\n"+f"{Company} 매수액 : {MyCompany_buying:,}   현재가 : {MyCompany_current:,}" + " 수익률 : " + Colors.RED +f" + {profit} %" + Colors.RESET,end="  ") 
+        print("\r\n"+f"{Company}  매수액 : {MyCompany_buying:,}   현재가 : {MyCompany_current:,}" + "  수익률 : " + Colors.RED +f" + {profit} %" + Colors.RESET,end="   ")
 
-    print()
+    print() 
