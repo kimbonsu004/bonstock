@@ -5,30 +5,32 @@ clientData = {
     "money":10000000,
     
     "stock":{
-        "samsung":
-            {
-                "buyprice":3000,
-                "currentprice":0,
-                "capacity":5,
-            },
         "apple":
             {
-                "buyprice":4000,
+                "buyprice":0,
                 "currentprice":0,
                 "capacity":5,
             },
+            "hansei":
+            {
+                "buyprice":0,
+                "currentprice":0,
+                "capacity":0,
+            },
+        "samsung":
+            {
+                "buyprice":0,
+                "currentprice":0,
+                "capacity":0,
+            },
+        
         "tessla":
             {
                 "buyprice":0,
                 "currentprice":0,
                 "capacity":0,
             },
-        "hansei":
-            {
-                "buyprice":2000,
-                "currentprice":0,
-                "capacity":5,
-            }
+        
         }    
 }
 

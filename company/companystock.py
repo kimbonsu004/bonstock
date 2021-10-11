@@ -3,15 +3,19 @@ from time import *
 from client import *
 import company
 
-def price(): # 백그라운드에서 계속 변화를 줄것임
+def price(): 
 
     for key in clientData['stock'].keys():
+
+        key_beginning=0
 
         key_beginning=randint(1000,10000) # 주식 시초가 , 1000원에서 10000원 사이 가격
 
         clientData['stock'][key]['currentprice'] = key_beginning
 
-def current_price():
+    current_price()
+
+def current_price(): # 백그라운드에서 계속 변화를 줄것임
 
     while True:
 
@@ -23,11 +27,9 @@ def current_price():
 
             per=randint(1,100) # 증감 확률
 
-            if per>=50:      # 60프로 확률
-                Company_curent=company_beginning+change
+            if per>=50:      # 50프로 확률
+                Company_current=company_beginning+change
             else:
-                Company_curent=company_beginning-change
+                Company_current=company_beginning-change
 
-            clientData['stock'][key]['currentprice']=Company_curent 
-
-        sleep(5)
+            clientData['stock'][key]['currentprice']=Company_current

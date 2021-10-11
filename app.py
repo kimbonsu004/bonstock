@@ -54,33 +54,11 @@ ______ __   __  _____  _                 _
                                               
 """)
 
-th=Thread(target=company.price,daemon=True)
-# th2=Thread(target=Samsung.price)
-# th3=Thread(target=Hansei.price)
-
+th=Thread(target=companystock.price)
 
 th.start()
 
 service()
 
-# th2.start()
-
-
-# th3.start()
-
-
-
-# th1.join()
-
-# th2.join()
-
-# th3.join()
-
-# th=Thread(target=company.__all__)
-# th.start()
-# service()
-# th.join()
-
-
-
+th.join()
 
