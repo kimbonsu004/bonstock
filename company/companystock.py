@@ -7,11 +7,9 @@ def price():
 
     for key in clientData['stock'].keys():
 
-        key_beginning=0
+        locals()[f'{key}_beginning']=randint(1000,10000) # 주식 시초가 , 1000원에서 10000원 사이 가격
 
-        key_beginning=randint(1000,10000) # 주식 시초가 , 1000원에서 10000원 사이 가격
-
-        clientData['stock'][key]['currentprice'] = key_beginning
+        clientData['stock'][key]['currentprice'] = locals()[f'{key}_beginning']
 
     current_price()
 

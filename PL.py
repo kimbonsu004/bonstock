@@ -9,7 +9,7 @@ class Colors:
 def PLfind():
     for key in clientData['stock'].keys():
         capacity = clientData['stock'][key]['capacity']
-        if capacity == 0:
+        if capacity <= 0:
             pass
         else:
             PL(key)

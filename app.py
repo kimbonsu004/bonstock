@@ -54,7 +54,7 @@ ______ __   __  _____  _                 _
                                               
 """)
 
-th=Thread(target=companystock.price)
+th=Thread(target=companystock.price,daemon=True)
 
 th.start()
 
