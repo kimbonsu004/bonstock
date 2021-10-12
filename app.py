@@ -66,6 +66,15 @@ ______ __   __  _____  _                 _
 \_|      \_/   \____/  \__| \___/  \___||_|\_\
                                               
                                               
+Python mock stock trading program by "kimbonsu004"
+
+Developer Github : https://github.com/kimbonsu004
+
+Thank you for using my program  。˚˚✧₊ ⁎⁺˳✧༚ ♡ミ
+
+
+if you want 'clear' , service num is '99' 
+
 """)
 
 th=Thread(target=price,daemon=True)
