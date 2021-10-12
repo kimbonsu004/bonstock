@@ -22,6 +22,7 @@ def service():
 [2] : 실시간 주가
 [3] : 자산 현황
 [4] : 실현 손익
+[5] : 실현 손익 (선택)
 
 >>>  """)
 
@@ -38,6 +39,29 @@ def service():
             elif service_num==4:
                 print()
                 PL()
+            elif service_num==5:
+
+                select_stock_able=[]
+
+                for key in clientData['stock'].keys():
+                    if clientData['stock'][key]['capacity'] != 0:
+                        select_stock_able.append(key)
+
+                print(select_stock_able)
+
+                while True:
+                    select_stock = input("확인하실 종목을 입력해주세요 >> ").lower()
+                    if select_stock not in clientData['stock']:
+                        print("존재하지 않는 종목입니다.")
+                        continue
+                    elif select_stock not in select_stock_able:
+                        print("보유하지 않은 종목입니다")
+                        continue
+                    else:
+                        print("메인으로 돌아가시려면 ctrl + c \n")
+                        PLone(select_stock)
+                        break
+
             elif service_num==99:
                 if platform.system()=='Windows':
                     os.system('cls')
