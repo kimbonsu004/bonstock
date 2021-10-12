@@ -5,6 +5,7 @@ from trading import *
 from threading import Thread
 from companystock import *
 import os
+import platform
 
 os.system("cls")
 
@@ -38,11 +39,15 @@ def service():
                 print()
                 PL()
             elif service_num==99:
-                os.system('cls')
+                if platform.system()=='Windows':
+                    os.system('cls')
+                else:
+                    os.system('clear')
             else:
-                print("해당 서비스가 존재하거나, 잘못된 입력입니다. 다시 입력해주세요.")
+                print("해당 서비스가 존재하지 않습니다.")
                 continue
         else:
+            print("잘못된 입력입니다. 다시 입력해주세요.")
             continue
 
 
