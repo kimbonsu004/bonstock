@@ -1,5 +1,6 @@
 from client import *
 from PL import *
+from streamstock import *
 from trading import *
 from threading import Thread
 from companystock import *
@@ -17,19 +18,25 @@ def service():
         service_num=int(input(
 """
 [1] : 주식 거래
-[2] : 자산 현황
-[3] : 실현 손익
+[2] : 실시간 주가
+[3] : 자산 현황
+[4] : 실현 손익
 
 >>>  """))
 
         if service_num==1:
             trade()
         elif service_num==2:
-            print("")
-            My_asset()
+            print()
+            stream()
         elif service_num==3:
-            print("")
+            print()
+            My_asset()
+        elif service_num==4:
+            print()
             PL()
+        elif service_num==99:
+            os.system('cls')
         else:
             print("해당 서비스가 존재하지 않습니다. 다시 입력해주세요.")
             continue
