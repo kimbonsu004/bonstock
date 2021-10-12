@@ -1,15 +1,14 @@
 from client import *
 from PL import *
-import company
 from trading import *
 from threading import Thread
-from company import *
+from companystock import *
 import os
 
 os.system("cls")
 
-
 def service():
+    my_name=clientData['name']
     print("{0}님 어서오세요,".format(my_name),end="")
     print(" 원하시는 업무를 선택하여 주세요")
     
@@ -30,17 +29,16 @@ def service():
             My_asset()
         elif service_num==3:
             print("")
-            PLfind()
+            PL()
         else:
             print("해당 서비스가 존재하지 않습니다. 다시 입력해주세요.")
             continue
 
 
 def My_asset(): # 자산현황 조회 , myAsset 의 mymoney mystock 를 받는다
+    my_name=clientData['name']
+    my_money=clientData['money']
     print("{0}님의 보유 자산은 {1:,}원 입니다.".format(my_name,my_money))
-
-
-my_name, my_money, my_stock=client() # client 함수의 리턴값을 받음
 
 print("""
 
@@ -54,11 +52,11 @@ ______ __   __  _____  _                 _
                                               
 """)
 
-th=Thread(target=companystock.price,daemon=True)
+th=Thread(target=price,daemon=True)
 
 th.start()
 
-service()
+client()
 
-th.join()
+service()
 

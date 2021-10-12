@@ -1,6 +1,6 @@
 from PL import PL
 from client import *
-from company import *
+from companystock import *
 
 def Comtrade(Company):
 
@@ -37,6 +37,7 @@ def Comtrade(Company):
             Mymoney-=buyprice*capacity
             clientData['stock'][Company]['capacity']+=capacity
             print(f'{capacity:,} 주 매수되었습니다.  보유 금액 : {Mymoney:,} 원')
+            clientData['money']=Mymoney
 
 
 def trade():

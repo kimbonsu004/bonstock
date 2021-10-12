@@ -1,15 +1,15 @@
 clientData = {
 
-    "name":"김본수",
+    "name":"",
 
-    "money":10000000,
+    "money":0,
     
     "stock":{
         "apple":
             {
                 "buyprice":0,
                 "currentprice":0,
-                "capacity":5,
+                "capacity":0,
             },
             "hansei":
             {
