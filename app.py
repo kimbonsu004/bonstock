@@ -15,30 +15,34 @@ def service():
     
     while True:
 
-        service_num=int(input(
+        service_num=input(
 """
 [1] : 주식 거래
 [2] : 실시간 주가
 [3] : 자산 현황
 [4] : 실현 손익
 
->>>  """))
+>>>  """)
 
-        if service_num==1:
-            trade()
-        elif service_num==2:
-            print()
-            stream()
-        elif service_num==3:
-            print()
-            My_asset()
-        elif service_num==4:
-            print()
-            PL()
-        elif service_num==99:
-            os.system('cls')
+        if service_num.isdigit()==True:
+            service_num=int(service_num)
+            if service_num==1:
+                trade()
+            elif service_num==2:
+                print()
+                stream()
+            elif service_num==3:
+                print()
+                My_asset()
+            elif service_num==4:
+                print()
+                PL()
+            elif service_num==99:
+                os.system('cls')
+            else:
+                print("해당 서비스가 존재하거나, 잘못된 입력입니다. 다시 입력해주세요.")
+                continue
         else:
-            print("해당 서비스가 존재하지 않습니다. 다시 입력해주세요.")
             continue
 
 

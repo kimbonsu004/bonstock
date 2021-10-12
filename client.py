@@ -43,7 +43,14 @@ def client():
         pass
 
     if clientData['money'] == 0:
-        clientData["money"] = int(input("고객님이 투자하실 금액을 입력해주세요 >>> "))
+        while True:
+            money=input("고객님이 투자하실 금액을 입력해주세요 >>> ")
+            if money.isdigit()==True:
+                clientData["money"] = int(money)
+                break
+            else:
+                print("올바른 값을 입력해주세요.")
+                continue
 
     else:
         pass

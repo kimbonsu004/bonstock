@@ -71,16 +71,16 @@ def Comtrade(Company):
             print(f"매도 가능 수량은 {sellable} 주 입니다.")
             while True:
                 capacity=input("매도 수량을 입력해주세요 >> ")
-                if capacity.isdigit() == False:
-                    print('숫자로만 입력해주세요')
-                    continue
+                if capacity.isdigit() == True:
+                    capacity=int(capacity) # 사용자가 판매할 수량이다
+                    break
                 elif capacity == 0:
                     print("유효하지 않은 수량입니다")
                     continue
                 else:
-                    capacity=int(capacity) # 사용자가 판매할 수량이다
-                    break
-
+                    print('숫자로만 입력해주세요')
+                    continue
+                    
             if capacity>sellable:  # 매도량 100 ? 가능량 50 , 실패
                 print("보유 주식이 부족합니다 !")
 
