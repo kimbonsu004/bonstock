@@ -55,9 +55,10 @@ def service():
                         print("존재하지 않는 종목입니다.")
                         continue
                     elif select_stock not in select_stock_able:
-                        print("보유하지 않은 종목입니다")
+                        print("보유하지 않은 종목입니다.")
                         continue
                     else:
+                        print()
                         print("메인으로 돌아가시려면 ctrl + c \n")
                         PLone(select_stock)
                         break
