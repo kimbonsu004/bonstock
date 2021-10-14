@@ -32,11 +32,13 @@ def service():
 
         service_num = input(
             """
+
 [1] : 주식 거래
 [2] : 실시간 주가
 [3] : 자산 현황
 [4] : 실현 손익
 [5] : 실현 손익 (실시간)
+
 
 >>>  """)
 
@@ -44,16 +46,12 @@ def service():
             service_num = int(service_num)
             if service_num == 1:
                 print("메인으로 돌아가시려면 ctrl + c \n")
-                print()
                 trade()
             elif service_num == 2:
-                print()
                 stream()
             elif service_num == 3:
-                print()
                 My_asset()
             elif service_num == 4:
-                print()
                 if not checkcapacity.selct_stock_able():
                     print("보유하신 주식이 없습니다.")
                 else:
@@ -75,7 +73,6 @@ def service():
                                 print("보유하지 않은 종목입니다.")
                                 continue
                             else:
-                                print()
                                 print("메인으로 돌아가시려면 ctrl + c \n")
                                 PLone(select_stock)
                                 break
@@ -88,11 +85,9 @@ def service():
                 else:
                     os.system('clear')
             else:
-                print()
                 print("해당 서비스가 존재하지 않습니다.")
                 continue
         else:
-            print()
             print("잘못된 입력입니다. 다시 입력해주세요.")
             continue
 
@@ -121,6 +116,7 @@ Thank you for using my program  。˚˚✧₊ ⁎⁺˳✧༚ ♡ミ
 
 
 if you want 'clear' , service num is '99' 
+
 
 """)
 
