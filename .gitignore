@@ -1,4 +1,4 @@
 __pycache__
 /templates
-prettierrc
-/idea
+.prettierrc
+.idea
