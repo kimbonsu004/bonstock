@@ -4,14 +4,14 @@ from stock import stock_info
 from threading import Thread
 
 
-def set_stock_start_price():
+def set_company_start_price():
 
     for company in stock_info.keys():
 
         stock_info[company]["start_price"] = randint(1000, 100000)  # 주식 시초가 , 1000원에서 100000원 사이 가격
 
         locals()[f"{company}_Th"] = Thread(
-            target=set_stock_current_price, args=(company,), daemon=True
+            target=set_company_current_price, args=(company,), daemon=True
         )  # 동적변수 , 데몬 쓰레드
 
         locals()[f"{company}_Th"].start()  # 쓰레드 시작
@@ -19,7 +19,7 @@ def set_stock_start_price():
         stock_info[company]["now_price"] = stock_info[company]["start_price"]
 
 
-def set_stock_current_price(company):
+def set_company_current_price(company):
 
     while True:
 

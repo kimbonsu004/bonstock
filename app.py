@@ -1,12 +1,12 @@
 from client import check_client_nulldata, show_client_info, show_client_earninginfo
-from company import set_stock_start_price
+from company import set_company_start_price
 from stock import show_stock_info
 from trade import set_trade
 import os
 
 
 def start_app_service():
-    set_stock_start_price()
+    set_company_start_price()
     check_client_nulldata()
 
 
