@@ -39,7 +39,7 @@ def trade_buy(company):
         except ValueError:
             print("올바른 값을 입력해주세요.")
             print()
-            break
+            continue
         except KeyboardInterrupt:
             break
 
