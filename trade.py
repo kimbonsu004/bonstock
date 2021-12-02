@@ -4,12 +4,12 @@ from company import stock_info
 import math
 
 
-def get_stock_buyable(money, price):
+def get_trade_buyable(money, price):
     buyable = math.floor(money / price)
     return buyable
 
 
-def get_stock_sellable(company):
+def get_trade_sellable(company):
     return client_info["stock"][company]["amount"]
 
 
@@ -18,7 +18,7 @@ def trade_buy(company):
         try:
             money = client_info["money"]
             price = stock_info[company]["now_price"]
-            buyable = get_stock_buyable(money, price)
+            buyable = get_trade_buyable(money, price)
             if buyable != 0:
                 print(f"{company} {price}, {buyable}주 매수 가능")
                 print()
@@ -49,7 +49,7 @@ def trade_sell(company):
         try:
             if company in get_client_stockholding():
                 price = stock_info[company]["now_price"]
-                sellable = get_stock_sellable(company)
+                sellable = get_trade_sellable(company)
                 print(f"{company} {price}, {sellable}주 매도 가능")
                 print()
                 amount = abs(int(input("매도 수량을 입력해주세요. >> ")))
