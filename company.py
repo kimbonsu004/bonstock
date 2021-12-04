@@ -10,13 +10,13 @@ def set_company_start_price():
 
         stock_info[company]["start_price"] = randint(1000, 100000)  # 주식 시초가 , 1000원에서 100000원 사이 가격
 
+        stock_info[company]["now_price"] = stock_info[company]["start_price"]
+
         locals()[f"{company}_Th"] = Thread(
             target=set_company_current_price, args=(company,), daemon=True
         )  # 동적변수 , 데몬 쓰레드
 
         locals()[f"{company}_Th"].start()  # 쓰레드 시작
-
-        stock_info[company]["now_price"] = stock_info[company]["start_price"]
 
 
 def set_company_current_price(company):
@@ -33,6 +33,10 @@ def set_company_current_price(company):
             change = 50
         elif 50000 <= now_price < 100000:
             change = 100
+        elif 100000 <= now_price < 500000:
+            change = 500
+        elif now_price >= 500000:
+            change = 1000
 
         per = randint(1, 100)  # 증감 확률
 
