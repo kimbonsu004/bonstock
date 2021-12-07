@@ -83,14 +83,14 @@ def set_trade():
             print(get_stock_list())
             print(get_client_stockholding())
             print()
-            trade = input("거래하실 종목, 거래 방법을 입력해주세요. >> ").split()
+            company, trade = input("거래하실 종목, 거래 방법을 입력해주세요. >> ").split()
 
-            if trade[0] in get_stock_list():
-                if trade[1] == "매수":
-                    trade_buy(trade[0])
+            if company in get_stock_list():
+                if trade == "매수":
+                    trade_buy(company)
                     break
-                elif trade[1] == "매도":
-                    trade_sell(trade[0])
+                elif trade == "매도":
+                    trade_sell(company)
                     break
                 else:
                     print("올바른 거래 방법이 아닙니다. [매수 매도]")
@@ -98,7 +98,7 @@ def set_trade():
             else:
                 print("존재하지 않는 종목입니다.")
                 continue
-        except IndexError:
+        except ValueError:
             print("올바른 입력 방법이 아닙니다. [종목] [거래 방법]")
             continue
         except KeyboardInterrupt:
