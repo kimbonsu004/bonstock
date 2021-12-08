@@ -25,15 +25,15 @@ def set_company_current_price(company):
 
         now_price = stock_info[company]["now_price"]
 
-        if 1000 <= now_price < 5000:
+        if now_price < 5000:
             change = 5
-        elif 5000 <= now_price < 10000:
+        elif now_price < 10000:
             change = 10
-        elif 10000 <= now_price < 50000:
+        elif now_price < 50000:
             change = 50
-        elif 50000 <= now_price < 100000:
+        elif now_price < 100000:
             change = 100
-        elif 100000 <= now_price < 500000:
+        elif now_price < 500000:
             change = 500
         elif now_price >= 500000:
             change = 1000
